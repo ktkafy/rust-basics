@@ -1,1 +1,1 @@
-# rust-basics
+# Rust Basics for offensive security
