@@ -18,6 +18,26 @@ fn main() {
     }
     println!("=======after iterate========");
     println!("{:?}", v1);
+
+    //collecting data into vector in a range:
+    let fa: Vec<i32> = (0..100).collect::<Vec<i32>>();
+    //println!("{:#?}", fa);
+
+    let mut v3:Vec<Vec<i32>> = Vec::new();
+    v3.push(v1);
+    println!("v3 is now {:#?}", v3);
+
+    let mut name:Vec<char> = vec!['T', 'e', 'c', 'h'];
+    
+    
+    let name = "string";
+    let myname:String = String::from(name);
+    
+    for i in name2.chars(){
+        println!("{}", i);
+    }
+
+
     /* 
     let t = l.iter().map(|x| x + 200).collect::<Vec<i32>>();
     println!("{:#?}",t);

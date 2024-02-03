@@ -91,7 +91,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       for i in 0..l.len(){
           println!("{}",l[i]);
       }
@@ -105,10 +105,10 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       for i in 0..l.len(){
           let res= l.get(i);
-        
+  
          match res{
               Some(value) => println!("{}", value),
               None => {}
@@ -122,7 +122,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       for i in l.iter(){
           println!("{}", i);
       }
@@ -136,7 +136,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
     ```rust
     fn main() {
         let mut l:[i32;7] = [4,5,6,7,8,9,1];
-        
+    
         for i in l.iter_mut(){
             *i = *i + 100;
             println!("{}", i);
@@ -153,7 +153,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let mut l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       for i in l.into_iter(){
           println!("{}", i);
       }
@@ -168,7 +168,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let mut l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       for i in l.into_iter(){
           println!("{}", i);
       }
@@ -181,7 +181,7 @@ as arrays are fixed in size and not remoeable, we make use of `vector`
   ```rust
   fn main() {
       let mut l:[i32;7] = [4,5,6,7,8,9,1];
-      
+  
       let t = l.iter().map(|x| x + 200).collect::<Vec<i32>>();
       println!("{:#?}",t);
   
@@ -252,7 +252,7 @@ vectors also store the same data types, only difference is the can grow in size 
       println!("{:#?}", v1);
       println!("===============");
       let v2:Vec<i32> = Vec::new();
-      
+  
       for i in v1.iter_mut(){
           *i +=100;
           println!("{}", i);
@@ -273,7 +273,7 @@ vectors also store the same data types, only difference is the can grow in size 
       println!("{:#?}", v1);
       println!("===============");
       let v2:Vec<i32> = Vec::new();
-      
+  
       for i in v1.clone().into_iter(){
           //*i +=100;
           println!("{}", i);
@@ -281,4 +281,78 @@ vectors also store the same data types, only difference is the can grow in size 
       println!("=======after iterate========");
       println!("{:?}", v1);
   }
+  ```
+
+- to get a `sum` of the elements we may do like this:
+  
+  ```rust
+  v1.iter().sum;
+  ```
+
+- collect data via iterator in vector:
+  
+  ```rust
+  let fa: Vec<i32> = (0..100).collect::<Vec<i32>>();
+      println!("{:#?}", fa);
+  ```
+
+- define a vector inside a vector:
+  
+  ```rust
+      let mut v3:Vec<Vec<i32>> = Vec::new();
+      v3.push(v1);
+      println!("v3 is now {:#?}", v3);
+  ```
+  
+  in this example we pushed `v1` which is also a vector inside `v3` which also is a vector.
+
+- define a vector with character type:
+  
+  ```rust
+  let mut name:Vec<char> = vec!['T', 'e', 'c', 'h'];
+  ```
+
+- string type:
+  
+  ```rust
+  let mut name2 = "string";
+      
+      for i in name2.chars(){
+          println!("{}", i);
+      }
+  ```
+  
+  **string is also vector but it stores string type**
+  
+  ```rust
+  let name = "string";
+      let myname:String = String::from(name);
+  ```
+  
+  we can also use `name.to_string()` like this:
+  
+  ```rust
+  let name = "string";
+      let myname:String = name.to_string();
+  ```
+
+- push into strings:
+  
+  using `push()` adds character and if we want to push string we may use this: `push_str()`
+  
+  ```rust
+  myname.push()
+  ```
+
+- convert from ASCIi to String, for that we use such criteria:
+  
+  ```rust
+  let u:Vec<u8> = vec![65,66,67,78];
+  String::from_utf8_lossy(&u[..]);
+  ```
+
+- convert string to `utf16`
+  
+  ```rust
+  name.encode_utf16();
   ```
