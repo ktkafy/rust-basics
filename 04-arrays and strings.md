@@ -316,7 +316,7 @@ vectors also store the same data types, only difference is the can grow in size 
   
   ```rust
   let mut name2 = "string";
-      
+  
       for i in name2.chars(){
           println!("{}", i);
       }
