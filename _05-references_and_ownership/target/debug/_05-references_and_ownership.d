@@ -1,0 +1,1 @@
+C:\Users\NooraNet\Documents\GitHub\rust-basics\_05-references_and_ownership\target\debug\_05-references_and_ownership.exe: C:\Users\NooraNet\Documents\GitHub\rust-basics\_05-references_and_ownership\src\main.rs
