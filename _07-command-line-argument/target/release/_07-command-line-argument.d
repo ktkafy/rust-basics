@@ -1,0 +1,1 @@
+C:\Users\F_Ioseliani\Documents\GitHub\rust-basics\_07-command-line-argument\target\release\_07-command-line-argument.exe: C:\Users\F_Ioseliani\Documents\GitHub\rust-basics\_07-command-line-argument\src\main.rs
